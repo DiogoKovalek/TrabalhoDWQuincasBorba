@@ -1,0 +1,90 @@
+:root {
+    --cor-borda: #ffffff; 
+    --cor-botao: #4CAF50;
+    --cor-botao-hover: #7cd15a;
+    --largura-caixa: 100px; 
+    --altura-caixa: 50px;
+    --espacamento-interno: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a:link {
+    color: blue; 
+  }
+
+  a:visited {
+    color: blue; 
+  }
+
+  a:hover {
+    color: red; 
+  }
+
+  a:active {
+    color: green;
+  }
+
+header {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alteração para uma direção de coluna para espaçamento vertical */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 25px; /* Espaçamento vertical entre a logo e os links */
+    /* tirar dps*/
+    width: var(--largura-caixa);
+    height: var(--altura-caixa);
+    background-color: white;
+    border: 1px solid var(--cor-borda);
+    padding: var(--espacamento-interno);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #333; /* Adiciona uma linha na parte inferior do link ao passar o mouse sobre ele */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos para o submenu */
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    background-color: #ffff;
+}
+
+nav ul li:hover ul.submenu {
+    display: block;
+}
+
+nav ul li ul.submenu li {
+    display: block;
+}

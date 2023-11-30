@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Vina+Sans:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria: #db8d34; 
+    --cor-texto-ficha: #643601;
+    --fonte-principal: 'Vina Sans', sans-serif; 
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--cor-primaria);
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1750px;
+    margin: 0 auto;
+}
+
+.ficha{
+    border: 2px solid black;
+    height: 75vh;
+    border-radius: 15px;
+    color: var(--cor-texto-ficha);
+    flex: 1; /* Adicionado para ocupar todo o espaço disponível na largura */
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.texto {
+    flex: 2;
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+
+}
+
+.ficha, .texto {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+   
+}
+
+.ficha img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: circle;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    font-size: 75px;
+}
+
+.menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Adjust layout for smaller screens, stacking elements vertically */
+    .ficha, .texto {
+        flex: 100%; /* Make each element take up 100% width */
+    }
+}
