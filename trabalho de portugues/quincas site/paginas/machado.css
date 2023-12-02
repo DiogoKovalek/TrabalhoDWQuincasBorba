@@ -1,0 +1,36 @@
+:root {
+    --cor-primaria: #db8d34;
+    --cor-texto-ficha: #643601;
+    --largura-caixa: 2000px;
+    --altura-caixa: 1000px;
+    --espacamento-interno: 20px;
+    --cor-borda: #000;
+}
+
+img{
+    height: var(--altura-caixa);
+    width: var(--largura-caixa);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .texto-esquerda {
+    margin-left: 20px;
+    flex: 1;
+  }
+  
+  .texto-direita {
+    margin-right: 20px;
+    text-align: right;
+  }
+  a{
+    margin-left: 10px;
+    color: black;
+  }
