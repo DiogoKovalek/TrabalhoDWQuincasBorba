@@ -1,36 +1,110 @@
 :root {
-    --cor-primaria: #db8d34;
-    --cor-texto-ficha: #643601;
-    --largura-caixa: 2000px;
-    --altura-caixa: 1000px;
-    --espacamento-interno: 20px;
-    --cor-borda: #000;
+  --cor-primaria: #db8d34;
+  --cor-texto-ficha: #643601;
+  --largura-caixa: 1500px;
+  --altura-caixa: 500px;
+  --espacamento-interno: 20px;
+  --cor-borda: #000;
 }
-
-img{
-    height: var(--altura-caixa);
-    width: var(--largura-caixa);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  
+.texto-esquerda {
+  margin-left: 20px;
+  flex: 1;
+}
+  
+.texto-direita {
+  margin-right: 20px;
+  text-align: right;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .texto-esquerda {
-    margin-left: 20px;
-    flex: 1;
-  }
-  
-  .texto-direita {
-    margin-right: 20px;
-    text-align: right;
-  }
-  a{
-    margin-left: 10px;
-    color: black;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
+img {
+  height: var(--altura-caixa);
+  width: var(--largura-caixa);
+  display: block;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: justify;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.link-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.event {
+  position: relative;
+  background-color: #f1f1f1;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.event h3 {
+  margin: 0;
+}
+
+.event p {
+  margin: 10px 0 0;
+  color: #555;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px solid #ccc;
+}
+
+.timeline::after {
+  content: '';
+  clear: both;
+  display: table;
+}
