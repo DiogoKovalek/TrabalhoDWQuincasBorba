@@ -14,6 +14,7 @@ body {
 }
 
 .texto {
+    text-indent: 10px;
     font-family: var(--fonte-principal);
     flex: 2;
     text-align: justify;
@@ -24,6 +25,14 @@ body {
     margin: 20px;
     font-weight:bold ;
 
+}
+
+.imagem {
+    width:var(--tamanho-padraoImagem); 
+    height: var(--tamanho-padraoImagem); 
+    border-radius: 100%; 
+    float: left; 
+    margin-right: 25px;
 }
 
 .imagem {
