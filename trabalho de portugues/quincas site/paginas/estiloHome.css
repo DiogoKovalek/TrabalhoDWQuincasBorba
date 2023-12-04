@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&family=Roboto:wght@300;400&display=swap');
 
 :root {
+    --tamanho-padraoImagem:250px;
     --cor-primaria: #000000; 
     --cor-texto-ficha: #643601;
-    --fonte-principal: 'Vina Sans', sans-serif; 
+    --fonte-principal: 'Montserrat', sans-serif; 
 }
 body {
     color: var(--cor-primaria);
@@ -13,14 +14,25 @@ body {
 }
 
 .texto {
-    font-family: 'Montserrat', sans-serif;
+    text-indent: 10px;
+    font-family: var(--fonte-principal);
     flex: 2;
     text-align: justify;
     box-sizing: border-box;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin: 2.5em;
+    padding: 7.5em;
     font-weight:bold ;
 
+
+}
+
+.imagem {
+    width:var(--tamanho-padraoImagem); 
+    height: var(--tamanho-padraoImagem); 
+    border-radius: 100%; 
+    float: left; 
+    margin-right: 20px;
 }
