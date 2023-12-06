@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --tamanho-padraoImagem:300px;
+    --cor-primaria: #000000; 
+    --cor-texto-ficha: #643601;
+    --fonte-principal: 'Montserrat', sans-serif; 
+}
+
+
+body {
+    color: var(--cor-primaria);
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.texto {
+    text-indent: 10px;
+    font-family: var(--fonte-principal);
+    flex: 2;
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    font-weight:bold ;
+    width: calc(95vw - 300px);
+    overflow: hidden;
+}
+
+.imagem {
+    width:var(--tamanho-padraoImagem); 
+    height: auto;  
+    float: left; 
+    margin-right: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Adiciona espaço abaixo da imagem */
+    
+}
