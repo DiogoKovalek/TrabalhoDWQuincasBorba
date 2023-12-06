@@ -31,8 +31,8 @@ body {
 
 .imagem {
     width:var(--tamanho-padraoImagem); 
-    height: var(--tamanho-padraoImagem); 
-    border-radius: 100%; 
+    height: var(--tamanho-padraoImagem);  
     float: left; 
-    margin-right: 20px;
-}
+    margin-right: 25px;
+    border-radius: 100%;
+    margin-bottom: 20px;
