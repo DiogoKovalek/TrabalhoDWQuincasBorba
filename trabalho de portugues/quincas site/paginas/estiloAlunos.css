@@ -31,7 +31,7 @@ body {
 
 }
 
-.imagem {
+img {
     width:var(--tamanho-padraoImagem); 
     height: var(--tamanho-padraoImagem); 
     float: left; 
