@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&family=Roboto:wght@300;400&display=swap');
 
 :root {
-    --tamanho-padraoImagem:250px;
+    --tamanho-padraoImagem:3em;
     --cor-primaria: #000000; 
     --cor-texto-ficha: #643601;
     --cor-background: #c5985e;
@@ -34,7 +34,6 @@ body {
 .imagem {
     width:var(--tamanho-padraoImagem); 
     height: var(--tamanho-padraoImagem); 
-    border-radius: 100%; 
     float: left; 
     margin-right: 20px;
 }
