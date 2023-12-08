@@ -1,13 +1,9 @@
-function carregarConteudo(url) {
-    document.getElementById('corpo').src = url;
-}
-
-const Menu = document.querySelector('.menu');
+const hamburgerMenu = document.querySelector('.hamburgue');
 const navMenu = document.querySelector('.nav-menu');
 
 let isOpen = false;
 
-Menu.addEventListener('click', function() {
+hamburgerMenu.addEventListener('click', function() {
   isOpen = !isOpen;
 
   if (isOpen) {
@@ -16,6 +12,14 @@ Menu.addEventListener('click', function() {
     navMenu.style.left = '-1000%';
   }
 });
+
+
+
+
+function carregarConteudo(url) {
+    document.getElementById('corpo').src = url;
+}
+
 
 document.getElementById('personagens').addEventListener('click', function() {
   var subMenu = document.getElementById('sub-menu-personagens');
@@ -29,3 +33,5 @@ document.addEventListener('click', function(e) {
       subMenu.classList.remove('show');
   }
 });
+
+
