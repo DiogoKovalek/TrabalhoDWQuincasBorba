@@ -33,8 +33,6 @@
 }
 
 img {
-  height: var(--altura-caixa);
-  width: var(--largura-caixa);
   display: block;
   margin-bottom: 20px;
 }
@@ -107,4 +105,13 @@ a:hover {
   content: '';
   clear: both;
   display: table;
+}
+@media (max-width:768px){
+  .texto{
+      font-size: 10px;
+  }
+  .imagem{
+      width: 200px;
+      height: auto;
+  }
 }
