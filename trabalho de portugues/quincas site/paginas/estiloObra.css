@@ -26,7 +26,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
     font-weight:bold ;
-    width: calc(95vw - 300px);
+    width: 95vw ;
     overflow: hidden;
 }
 
@@ -36,5 +36,15 @@ body {
     float: left; 
     margin-right: 25px;
     border-radius: 10px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px; /* Adiciona espaço abaixo da imagem */
+    
+}
+@media (max-width:768px){
+    .texto{
+        font-size: 10px;
+    }
+    .imagem{
+        width: 200px;
+        height: auto;
+    }
 }
