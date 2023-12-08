@@ -13,7 +13,7 @@ Menu.addEventListener('click', function() {
   if (isOpen) {
     navMenu.style.left = '0';
   } else {
-    navMenu.style.left = '-100%';
+    navMenu.style.left = '-1000%';
   }
 });
 
