@@ -31,9 +31,18 @@ body {
 
 }
 
-img {
+.imagem {
     width:var(--tamanho-padraoImagem); 
     height: var(--tamanho-padraoImagem); 
     float: left; 
     margin-right: 20px;
+}
+@media (max-width:768px){
+    .texto{
+        font-size: 10px;
+    }
+    .imagem{
+        width: 20px;
+        height: auto;
+    }
 }
