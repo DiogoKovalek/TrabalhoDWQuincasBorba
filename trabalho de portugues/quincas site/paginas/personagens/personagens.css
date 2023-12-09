@@ -23,42 +23,41 @@ body {
     margin: 0 auto;
 }
 
-.ficha{
+.ficha {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
     border: 2px solid black;
-    /*height: 750px;*/
     border-radius: 15px;
     background-color: var(--cor-primaria);
     color: var(--cor-texto-ficha);
-    flex: 1; 
     box-sizing: border-box;
-    padding: 0px;
-    background-color: #fff;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0px;
+    margin: 20px;
 }
 
-.ficha p ul{
+ul li ul {
+    list-style-type: circle; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px; 
+}
+
+.ficha p ul {
     margin-left: 10px;
 }
 
 .texto {
     flex: 2;
+    max-width: 1000px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
     text-align: justify;
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-
-}
-
-.ficha, .texto {
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-   
 }
 
 .ficha img {
@@ -86,17 +85,20 @@ h1 {
     display: none;
 }
 
-.centro{
+.centro {
     text-align: center;
 }
 
-.direita{
+.direita {
     text-align: right;
 }
 
 @media (max-width: 768px) {
-    /* Adjust layout for smaller screens, stacking elements vertically */
     .ficha, .texto {
-        flex: 100%; /* Make each element take up 100% width */
+        flex: 100%;
+        max-width: none;
+        margin: 20px auto;
+    }
+}
     }
 }
