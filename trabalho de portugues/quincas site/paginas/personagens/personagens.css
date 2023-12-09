@@ -25,7 +25,7 @@ body {
 
 .ficha{
     border: 2px solid black;
-    height: 750px;
+    /*height: 750px;*/
     border-radius: 15px;
     background-color: var(--cor-primaria);
     color: var(--cor-texto-ficha);
