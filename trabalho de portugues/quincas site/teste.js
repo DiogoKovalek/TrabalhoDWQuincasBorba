@@ -50,3 +50,33 @@ document.addEventListener('click', function(e) {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  var personagensNavItem = document.getElementById("personagens");
+  var submenu = personagensNavItem.querySelector(".sub-menu");
+
+  function toggleSubMenu() {
+      submenu.classList.toggle("active");
+  }
+
+  function closeSubMenuOutsideClick(event) {
+      if (!personagensNavItem.contains(event.target) && !submenu.contains(event.target)) {
+          submenu.classList.remove("active");
+          document.removeEventListener("click", closeSubMenuOutsideClick);
+      }
+  }
+
+  personagensNavItem.addEventListener("click", function (event) {
+      event.stopPropagation();
+      toggleSubMenu();
+
+      if (submenu.classList.contains("active")) {
+          document.addEventListener("click", closeSubMenuOutsideClick);
+      } else {
+          document.removeEventListener("click", closeSubMenuOutsideClick);
+      }
+  });
+});
+
+
+
