@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
 :root {
-    --cor-primaria: #db8d34; 
+    --cor-primaria: #ddaa6f; 
     --cor-texto-ficha: #643601;
     --fonte-principal: 'Nova Square', sans-serif; 
 }
@@ -85,10 +85,6 @@ h1 {
     display: none;
 }
 
-.centro {
-    text-align: center;
-}
-
 .direita {
     text-align: right;
 }
@@ -98,7 +94,5 @@ h1 {
         flex: 100%;
         max-width: none;
         margin: 20px auto;
-    }
-}
     }
 }
