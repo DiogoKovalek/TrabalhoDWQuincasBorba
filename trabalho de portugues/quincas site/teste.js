@@ -13,6 +13,21 @@ hamburgerMenu.addEventListener('click', function() {
   }
 });
 
+// Codigo para fechar menu quando clicado em um link ================================================
+// Função para fechar o menu
+function fecharMenu() {
+  isOpen = false;
+  navMenu.style.left = '-1000%';
+}
+
+// Adiciona manipuladores de eventos para cada link dentro do menu
+const links = document.querySelectorAll('.nav-menu');
+links.forEach(function(link) {
+  link.addEventListener('click', function() {
+    fecharMenu();
+  });
+});
+//====================================================================================================
 
 
 
