@@ -183,7 +183,6 @@ body, header, nav, #main-content, .rodape {
 
     .nav-menu{
         position: absolute;
-        left: -100px;
         top: 18%;
         gap: 0;
         border-radius: 0 0 20px 20px ;
@@ -195,6 +194,8 @@ body, header, nav, #main-content, .rodape {
         width: 100%;
         height: 100%;
         transition: 0.3s;
+        /*left deve vir por ultimo para que ele nao fique aberto automaticamente*/
+        left: -1000px;
 
     }
 
