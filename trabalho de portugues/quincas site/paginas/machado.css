@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&family=Roboto:wght@300;400&display=swap');
+
 :root {
   --cor-primaria: #db8d34;
   --cor-texto-ficha: #643601;
@@ -5,22 +7,35 @@
   --altura-caixa: 500px;
   --espacamento-interno: 20px;
   --cor-borda: #000;
+  --fonte-principal: 'Montserrat', sans-serif;
 }
-  
+
 .texto-esquerda {
   margin-left: 20px;
   flex: 1;
 }
-  
+
+.linha {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px;
+}
+
 .texto-direita {
   margin-right: 20px;
   text-align: right;
 }
 
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   max-width: 1500px;
   margin: 20px auto;
   padding: 20px;
@@ -28,13 +43,30 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: justify;
   flex-grow: 1;
   margin-left: 30px;
+  text-indent: 10px;
+  font-family: var(--fonte-principal);
+  flex: 2;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  font-weight: bold;
+  max-width: 1500px;
+  width: 90vw;
 }
 
 img {
+  height: var(--altura-caixa);
+  width: var(--largura-caixa);
   display: block;
-  margin-bottom: 20px;
+  margin: 20px 20px;
 }
 
 h1 {
@@ -69,49 +101,300 @@ a:hover {
 }
 
 .timeline {
+  display: none;
   position: relative;
-  max-width: 800px;
-  margin: 50px auto;
-}
-
-.event {
-  position: relative;
-  background-color: #f1f1f1;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
   margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 20px;
 }
 
-.event h3 {
-  margin: 0;
+.timeline-dots {
+  position: relative;
+  height: 20px;
+  top: -5px;
+  /* Ajusta a posição dos pontos em relação à linha */
 }
 
-.event p {
-  margin: 10px 0 0;
-  color: #555;
-}
-
-.timeline::before {
-  content: '';
+.timeline-line {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  border-left: 2px solid #ccc;
+  width: 100%;
+  height: 2px;
+  /* Altura da linha */
+  background-color: #000;
+  /* Cor da linha */
+  top: 50%;
 }
 
-.timeline::after {
-  content: '';
-  clear: both;
-  display: table;
+.timeline .year-content {
+  display: none;
+  /* Oculta o conteúdo do evento por padrão */
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  /* Centraliza horizontalmente o texto */
+  transform: translateX(-50%);
+  max-width: 200px;
+  /* Defina uma largura máxima para o conteúdo */
+  padding: 10px;
+  /* Adicione algum espaçamento ao redor do conteúdo */
+  background-color: #fff;
+  /* Cor de fundo da caixa de texto */
+  border: 1px solid #000;
+  /* Adicione uma borda à caixa de texto */
 }
-@media (max-width:768px){
-  .texto{
-      font-size: 10px;
-  }
-  .imagem{
-      width: 200px;
-      height: auto;
-  }
+
+.timeline .event.active .event-content {
+  display: block;
+  /* Exibe o conteúdo quando o evento está ativo (selecionado) */
+}
+
+.timeline-dots,
+.years {
+  display: flex;
+}
+
+.dot,
+.year {
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.timeline .event {
+  position: absolute;
+  width: 10px;
+  /* Largura do ponto */
+  height: 10px;
+  /* Altura do ponto */
+  background-color: #000;
+  /* Cor do ponto */
+  border-radius: 50%;
+  /* Transforma o ponto em um círculo */
+  cursor: pointer;
+  transform: translateX(-50%) translateY(-50%);
+  /* Centraliza horizontal e verticalmente o ponto */
+}
+
+.timeline .event::before {
+  content: attr(data-year);
+  /* Exibe o ano dentro do ponto */
+  position: absolute;
+  top: 20px;
+  /* Ajuste conforme necessário para a posição vertical do ano */
+  left: 50%;
+  /* Centraliza o texto horizontalmente */
+  transform: translateX(-50%);
+  white-space: nowrap;
+  /* Evita que o texto seja quebrado */
+  font-size: 12px;
+  /* Tamanho do texto do ano */
+  text-align: center;
+}
+
+.timeline .event.active {
+  background-color: #ff0000;
+  /* Cor do ponto quando ativo (selecionado) */
+}
+
+/* Estilo para os eventos (pontos) na linha do tempo */
+.timeline .event {
+  position: relative;
+  margin-right: 50px;
+  /* Adiciona espaço entre os pontos */
+}
+
+/* Estilo para os pontos na linha do tempo */
+.timeline .dot {
+  width: 30px;
+  /* Aumenta o tamanho dos pontos */
+  height: 30px;
+}
+
+/* Estilo para o ano dentro do ponto na linha do tempo */
+.timeline .event::before {
+  content: attr(data-year);
+  /* Exibe o ano dentro do ponto */
+  position: absolute;
+  top: 100%;
+  /* Posiciona o texto abaixo do ponto */
+  left: 50%;
+  /* Centraliza o texto horizontalmente */
+  transform: translateX(-50%);
+  white-space: nowrap;
+  /* Evita que o texto seja quebrado */
+  font-size: 12px;
+  /* Tamanho do texto do ano */
+  text-align: center;
+  z-index: 1;
+  /* Garante que o texto fique sobre a linha */
+}
+
+/* Linha vertical que conecta o ponto à linha principal da linha do tempo */
+.timeline .event::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  /* Posiciona no meio do ponto */
+  left: 50%;
+  /* Posiciona no meio do ponto */
+  width: 2px;
+  /* Largura da linha vertical */
+  height: 20px;
+  /* Altura da linha vertical */
+  background-color: #333;
+  /* Cor da linha vertical */
+  transform: translateX(-50%);
+  z-index: 0;
+  /* Garante que a linha fique atrás do ponto e do texto */
+}
+
+/* Estilo da linha vertical quando o ponto está ativo (selecionado) */
+.timeline .event.active::after {
+  background-color: #ff0000;
+  /* Cor da linha quando o ponto está ativo (selecionado) */
+}
+
+.timeline .event.active {
+  background-color: #ff0000;
+  /* Cor do ponto quando ativo (selecionado) */
+}
+
+/* Ponto na linha do tempo */
+.timeline-dots::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: #333;
+  /* Cor do ponto */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.timeline .event[data-position="0"]::before {
+  left: 5%;
+}
+
+.timeline .event[data-position="1"]::before {
+  left: 15%;
+}
+
+.timeline .event[data-position="2"]::before {
+  left: 25%;
+}
+
+.timeline .event[data-position="3"]::before {
+  left: 35%;
+}
+
+.timeline .event[data-position="4"]::before {
+  left: 45%;
+}
+
+.timeline .event[data-position="5"]::before {
+  left: 55%;
+}
+
+.timeline .event[data-position="6"]::before {
+  left: 65%;
+}
+
+.timeline .event[data-position="7"]::before {
+  left: 70%;
+}
+
+.timeline .event[data-position="8"]::before {
+  left: 85%;
+}
+
+.timeline .event[data-position="9"]::before {
+  left: 95%;
+}
+
+.linha-do-tempo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.arrow {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.right {
+  right: 10px;
+}
+
+.left {
+  left: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.years {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  /* Espaçamento entre os pontos e os anos */
+  font-size: 12px;
 }
